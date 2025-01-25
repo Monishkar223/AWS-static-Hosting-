@@ -12,6 +12,7 @@
             background: linear-gradient(45deg, #f4f4f4, #e6e6e6);
             color: #333;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         header {
@@ -102,6 +103,19 @@
             color: #333;
             margin-top: 100vh;
             clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+            opacity: 0;
+            animation: fadeUp 2s forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .feature {
@@ -139,6 +153,8 @@
             text-align: center;
             padding: 2rem 0;
             margin-top: 2rem;
+            opacity: 0;
+            animation: fadeUp 2s forwards;
         }
 
         footer p {
@@ -149,6 +165,45 @@
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Scroll Animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(100px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 10vh;
+            justify-content: center;
+        }
+
+        .scroll-container div {
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-in-out forwards;
+        }
+
+        .scroll-container div:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .scroll-container div:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .scroll-container div:nth-child(3) {
+            animation-delay: 0.9s;
         }
     </style>
 </head>
@@ -189,5 +244,11 @@
     <footer id="contact">
         <p>&copy; 2025 AWS Cloud. All rights reserved.</p>
     </footer>
+
+    <div class="scroll-container">
+        <div class="scroll-animate">This is some additional content that will fade in as you scroll.</div>
+        <div class="scroll-animate">This is another piece of content with a delay effect on scroll.</div>
+        <div class="scroll-animate">Here's a final section that also appears as you scroll.</div>
+    </div>
 </body>
 </html>
