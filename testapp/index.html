@@ -4,7 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: white;
+            color: #333;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background: #121212;
+            color: white;
+        }
+
+        /* Navigation Bar */
+        header {
+            background-color: #232f3e;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #dark-mode-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+
+        .background-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .cta-button {
+            background-color: #ff9900;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #e68a00;
+        }
+
+        /* Features */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #ffeb3b, #ff9800);
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        /* Pricing */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin: 10px;
+        }
+
+        /* Testimonials */
+        .testimonial-slider {
+            display: flex;
+            overflow: auto;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #232f3e;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,21 +137,19 @@
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <button id="dark-mode-toggle">🌙</button>
         </nav>
-        <button id="dark-mode-toggle">🌙</button>
     </header>
-
+    
     <section class="hero" id="hero">
         <video class="background-video" autoplay muted loop>
             <source src="background.mp4" type="video/mp4">
         </video>
-        <div>
-            <h2>Welcome to AWS Cloud</h2>
-            <p>Build, scale, and innovate with the most comprehensive cloud platform.</p>
-            <button class="cta-button">Get Started</button>
-        </div>
+        <h2>Welcome to AWS Cloud</h2>
+        <p>Build, scale, and innovate with the most comprehensive cloud platform.</p>
+        <button class="cta-button">Explore Features</button>
     </section>
-
+    
     <section class="features" id="features">
         <div class="feature">
             <h3>Compute</h3>
@@ -46,40 +164,33 @@
             <p>Innovate faster with artificial intelligence tools.</p>
         </div>
     </section>
-
+    
     <section class="pricing-container" id="pricing">
         <div class="pricing-card">
-            <h3>Basic Plan</h3>
-            <p>$10/month</p>
+            <h3>Basic</h3>
+            <p>Perfect for small businesses.</p>
         </div>
         <div class="pricing-card">
-            <h3>Pro Plan</h3>
-            <p>$30/month</p>
+            <h3>Pro</h3>
+            <p>Ideal for growing companies.</p>
         </div>
         <div class="pricing-card">
-            <h3>Enterprise Plan</h3>
-            <p>Custom Pricing</p>
+            <h3>Enterprise</h3>
+            <p>Scalable solutions for enterprises.</p>
         </div>
     </section>
-
+    
     <section class="testimonial-slider" id="testimonials">
         <div class="testimonial">
-            <p>"AWS has transformed our business!" - John Doe</p>
+            <p>"AWS transformed our business!" - John Doe</p>
         </div>
         <div class="testimonial">
-            <p>"Amazing cloud services, highly reliable." - Jane Smith</p>
+            <p>"Reliable and scalable cloud solutions." - Jane Smith</p>
         </div>
     </section>
-
+    
     <footer id="contact">
         <p>&copy; 2025 AWS Cloud. All rights reserved.</p>
     </footer>
-
-    <script>
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('dark-mode');
-        });
-    </script>
 </body>
 </html>
